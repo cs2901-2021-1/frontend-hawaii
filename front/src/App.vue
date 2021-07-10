@@ -62,7 +62,7 @@ export default {
     verProyecciones(token){
       this.token = token;
       axios.get("http://localhost:8080/viewers")
-      .then(proyecciones => this.proyecciones = proyecciones)
+      .then(proyecciones => this.proyecciones = proyecciones.data)
       .catch(() => alert("Error"))
       .finally(() => this.ingresando = false);
     }
