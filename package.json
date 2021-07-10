@@ -2,6 +2,7 @@
   "name": "project-frontend-hawaii",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/app-sec02-group02",
   "scripts": {
     "serve": "vue-cli-service serve --port 8081",
     "build": "vue-cli-service build",
