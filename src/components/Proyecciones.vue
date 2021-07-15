@@ -7,12 +7,15 @@
                                              Ultima actualización: dia/mes/año   
                                         </v-toolbar-title>
                                 </v-toolbar>
+                                <v-text-field class="text-xs-center" v-model="search" append-icon="search" label="Búsqueda" single-line hide-details></v-text-field>
+                                <v-spacer></v-spacer>
                                 <v-card-text>
                                         <v-layout justify-center>
                                                 <v-flex xs12>
                                                         <v-data-table 
                                                         :headers="variables"
                                                         :items="proyecciones"
+                                                        :search="search"
                                                         :items-per-page="10"
                                                         class="elevation-1"
                                                         ></v-data-table>
@@ -37,6 +40,7 @@ export default {
                                 { text: 'Proyección', value: 'nStudent' },
                                 { text: 'Error (+/-)', value: 'error' },
                         ],
+                        search:'',
                 }
         },
 
