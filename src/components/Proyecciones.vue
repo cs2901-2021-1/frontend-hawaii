@@ -7,7 +7,14 @@
                                              Ultima actualización: dia/mes/año   
                                         </v-toolbar-title>
                                 </v-toolbar>
-                                <v-text-field class="text-xs-center" v-model="search" append-icon="search" label="Búsqueda" single-line hide-details></v-text-field>
+
+                                <v-toolbar color="secondary" dark card>
+                                        <v-toolbar-title>
+                                                <v-text-field class="text-xs-center" v-model="search" append-icon="search" label="Búsqueda" single-line hide-details></v-text-field>
+
+                                        </v-toolbar-title>
+                                </v-toolbar>
+
                                 <v-spacer></v-spacer>
                                 <v-card-text>
                                         <v-layout justify-center>
