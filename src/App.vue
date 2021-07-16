@@ -3,8 +3,7 @@
 
     <v-app-bar
       app
-      color="primary"
-      
+      color="#99C0DE"
     >
     <div class="d-flex align-center">
         <v-img
@@ -16,7 +15,7 @@
           width="80"
         /></div>
         <v-layout align-center justify-center>
-          <v-toolbar-title class = "headline text-uppercase" >Proyección academica</v-toolbar-title>
+          <v-toolbar-title class = "" >Proyección académica</v-toolbar-title>
           </v-layout>
     </v-app-bar>
     
@@ -30,7 +29,7 @@
       </v-container>
     </v-main>
 
-    <v-footer color="primary">
+    <v-footer color="#99C0DE">
       <v-layout justify-center>
         <span>Team Hawaii - Ingeniería de Software 1 - UTEC</span>
       </v-layout>
@@ -73,5 +72,8 @@ export default {
 <style>
 .fondo{
   background-color: #f1f1f1;
+}
+.headline text-uppercase{
+  font-family: "sans-serif";
 }
 </style>

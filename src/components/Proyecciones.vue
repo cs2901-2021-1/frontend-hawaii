@@ -4,7 +4,7 @@
                          <v-card>
                                 <v-toolbar color="secondary" dark card>
                                         <v-toolbar-title>
-                                             Ultima actualización: dia/mes/año   
+                                             Última actualización:    
                                         </v-toolbar-title>
                                 </v-toolbar>
 
