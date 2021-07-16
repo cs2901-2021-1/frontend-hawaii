@@ -3,13 +3,13 @@
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+  import Login from '../components/Login'
 
   export default {
-    name: 'Home',
+    name: 'Login',
 
     components: {
-      HelloWorld,
+      Login,
     },
   }
 </script>
