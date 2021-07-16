@@ -73,7 +73,4 @@ export default {
 .fondo{
   background-color: #f1f1f1;
 }
-.headline text-uppercase{
-  font-family: "sans-serif";
-}
 </style>
