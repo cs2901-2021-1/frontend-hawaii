@@ -2,8 +2,9 @@
   <v-app>
 
     <v-app-bar
+      dark
       app
-      color="#99C0DE"
+      color=primary
     >
     <div class="d-flex align-center">
         <v-img
@@ -12,11 +13,11 @@
           contain
           src="https://proyectos.utec.edu.pe/themes/custom/utec/logo.png"
           transition="scale-transition"
-          width="80"
+          width="100"
         /></div>
         <v-layout align-center justify-center>
-          <v-toolbar-title class = "" >Proyección académica</v-toolbar-title>
-          </v-layout>
+          <v-toolbar-title class = "v-toolbar_title encode-font" color="#e8fffe">Proyección académica</v-toolbar-title>
+        </v-layout>
     </v-app-bar>
     
 
@@ -29,8 +30,11 @@
       </v-container>
     </v-main>
 
-    <v-footer color="#99C0DE">
-      <v-layout justify-center>
+    <v-footer dark color=primary>
+      <v-layout justify-start>
+        <v-btn @click="ingresarTI" :loading="cargando" :disabled="cargando" color="secondary">TI Login</v-btn>
+      </v-layout>
+      <v-layout >
         <span>Team Hawaii - Ingeniería de Software 1 - UTEC</span>
       </v-layout>
     </v-footer>
@@ -42,6 +46,7 @@
 import Login from './components/Login';
 import Proyecciones from './components/Proyecciones';
 import axios from "axios";
+import TI from './components/TI';
 
 export default {
   name: 'App',
@@ -55,6 +60,8 @@ export default {
     return{
       token: null,
       proyecciones: null,
+      //ti: false,
+      cargando: false,
     } 
   },
   methods: {
@@ -64,13 +71,24 @@ export default {
       .then(proyecciones => this.proyecciones = proyecciones.data)
       .catch(() => alert("Error"))
       .finally(() => this.ingresando = false);
+    },
+
+    ingresarTI(){
+      this.cargando = true;
+      this.ti = true;
+      this.$emit("onIngresarTI", "token falso")
     }
   }
 };
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC');
 .fondo{
-  background-color: #f1f1f1;
+  background-color: #3a3b3f;
+}
+.encode-font{
+  font-family: 'Encode Sans SC', sans-serif !important;
+  font-size: 30px;
 }
 </style>

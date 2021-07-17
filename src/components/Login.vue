@@ -4,12 +4,12 @@
                          <v-card>
                                 <v-toolbar color="secondary" dark card>
                                         <v-toolbar-title>
-                                             Ingrese sus credenciales   
+                                             Autenticarse con Google   
                                         </v-toolbar-title>
                                 </v-toolbar>
                                 <v-card-text>
                                         <v-layout justify-center>
-                                                <v-btn @click="ingresar" :loading="cargando" :disabled="cargando" color="secondary">Autenticarse con Google</v-btn>
+                                                <v-btn @click="ingresar" :loading="cargando" :disabled="cargando" color="secondary">Ingresar con Google</v-btn>
                                         </v-layout>
                                 </v-card-text>
                         </v-card>     
