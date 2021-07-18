@@ -27,10 +27,7 @@
 
 
     <v-footer dark color=primary>
-      <v-layout justify-start>
-        <v-btn @click="ingresarTI" :loading="cargando" :disabled="cargando" color="secondary">TI Login</v-btn>
-      </v-layout>
-      <v-layout >
+      <v-layout justify-center>
         <span>Team Hawaii - Ingeniería de Software 1 - UTEC</span>
       </v-layout>
       

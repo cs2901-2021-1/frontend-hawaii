@@ -10,8 +10,11 @@
                                         </v-toolbar-title>
                                 </v-toolbar>
                                 <v-card-text>
-                                        <v-layout justify-center>
+                                        <v-layout justify-center class="mb-5 mt-5">
                                                 <v-btn @click="ingresar" :loading="cargando" :disabled="cargando" color="secondary">Ingresar con Google</v-btn>
+                                        </v-layout>
+                                        <v-layout justify-center class="mb-5">
+                                                <v-btn @click="tiIngresar" :loading="cargando" :disabled="cargando" color="secondary">TI Login</v-btn>
                                         </v-layout>
                                 </v-card-text>
                         </v-card>     
@@ -33,9 +36,10 @@ export default {
         methods: {
                 ingresar(){
                         window.location.href = 'https://api.cs.mrg.com.pe/api-sec02-group02/viewers/auth';
-                        this.cargando = true;
-                        //this.$emit("onIngresar", "token falso")
+                },
+                tiIngresar(){
+                        window.location.href = 'https://api.cs.mrg.com.pe/api-sec02-group02/ti/auth';
                 }
-        }
+        },
 }
 </script>
