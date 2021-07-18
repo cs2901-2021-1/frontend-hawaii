@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
         props: ["proyecciones"],
         data(){
@@ -52,6 +53,14 @@ export default {
         },
 
         methods: {
+        },
+
+        created(){
+                this.token = token;
+                axios.get("https://api.cs.mrg.com.pe/api-sec02-group02/viewers", {withCredentials: true})
+                .then(proyecciones => this.proyecciones = proyecciones.data)
+                .catch(() => alert("Error"))
+                .finally(() => this.ingresando = false);
         }
 }
 </script>
