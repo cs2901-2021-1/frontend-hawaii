@@ -67,7 +67,7 @@ export default {
   methods: {
     verProyecciones(token){
       this.token = token;
-      axios.get("https://api.cs.mrg.com.pe/api-sec02-group02/viewers")
+      axios.get("https://api.cs.mrg.com.pe/api-sec02-group02/viewers", {withCredentials: true})
       .then(proyecciones => this.proyecciones = proyecciones.data)
       .catch(() => alert("Error"))
       .finally(() => this.ingresando = false);
