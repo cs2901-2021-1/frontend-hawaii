@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+<v-app>
 
     <v-app-bar
       dark
@@ -19,16 +19,12 @@
           <v-toolbar-title class = "v-toolbar_title encode-font" color="#e8fffe">Proyección académica</v-toolbar-title>
         </v-layout>
     </v-app-bar>
-    
-
     <v-main>
       <v-container fluid fill-height class="fondo">
-        
-        <Login v-if="!proyecciones" @onIngresar="verProyecciones"/>
-        <Proyecciones v-else :proyecciones="proyecciones"/>
-        
-      </v-container>
-    </v-main>
+    <router-view />
+    </v-container>
+</v-main>
+
 
     <v-footer dark color=primary>
       <v-layout justify-start>
@@ -37,48 +33,17 @@
       <v-layout >
         <span>Team Hawaii - Ingeniería de Software 1 - UTEC</span>
       </v-layout>
+      
     </v-footer>
-    <router-view />
+    
   </v-app>
+  
 </template>
 
 <script>
-import Login from './components/Login';
-import Proyecciones from './components/Proyecciones';
-import axios from "axios";
-import TI from './components/TI';
 
 export default {
   name: 'App',
-
-  components: {
-    Login,
-    Proyecciones
-  },
-
-  data(){
-    return{
-      token: null,
-      proyecciones: null,
-      //ti: false,
-      cargando: false,
-    } 
-  },
-  methods: {
-    verProyecciones(token){
-      this.token = token;
-      axios.get("https://api.cs.mrg.com.pe/api-sec02-group02/viewers", {withCredentials: true})
-      .then(proyecciones => this.proyecciones = proyecciones.data)
-      .catch(() => alert("Error"))
-      .finally(() => this.ingresando = false);
-    },
-
-    ingresarTI(){
-      this.cargando = true;
-      this.ti = true;
-      this.$emit("onIngresarTI", "token falso")
-    }
-  }
 };
 </script>
 
@@ -89,6 +54,6 @@ export default {
 }
 .encode-font{
   font-family: 'Encode Sans SC', sans-serif !important;
-  font-size: 30px;
+  font-size: 30px !important;
 }
 </style>
