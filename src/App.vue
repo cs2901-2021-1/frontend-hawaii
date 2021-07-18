@@ -16,7 +16,7 @@
           width="100"
         /></div>
         <v-layout align-center justify-center>
-          <v-toolbar-title class = "v-toolbar_title encode-font pr-20" color="#e8fffe">Proyección académica</v-toolbar-title>
+          <v-toolbar-title class = "v-toolbar_title encode-font pr-20 mr-16" color="#e8fffe">Proyección académica</v-toolbar-title>
         </v-layout>
     </v-app-bar>
     <v-main>
