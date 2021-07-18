@@ -38,7 +38,7 @@
         <span>Team Hawaii - Ingeniería de Software 1 - UTEC</span>
       </v-layout>
     </v-footer>
-
+    <router-view />
   </v-app>
 </template>
 
