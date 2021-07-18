@@ -14,6 +14,11 @@ const routes = [
     name: "TI",
     component: () => import("../components/TI.vue"),
   },
+  {
+    path: "/proyecciones",
+    name: "Proyecciones",
+    component: () => import("../components/Proyecciones.vue"),
+  },
 ];
 
 const router = new VueRouter({
