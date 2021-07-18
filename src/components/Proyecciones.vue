@@ -2,7 +2,7 @@
         <v-layout justify-center>
                 <v-flex xs12>
                          <v-card>
-                                <v-toolbar color="secondary" dark card>
+                                <v-toolbar color="tertiary" dark card>
                                         <v-toolbar-title>
                                              Última actualización:    
                                         </v-toolbar-title>

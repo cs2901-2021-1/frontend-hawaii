@@ -4,7 +4,7 @@
         <v-layout justify-center align-center>
                 <v-flex xs12 sm8 md6 lg5 xl4>
                          <v-card>
-                                <v-toolbar color="secondary" dark card>
+                                <v-toolbar color="tertiary" dark card >
                                         <v-toolbar-title>
                                              Autenticarse con Google   
                                         </v-toolbar-title>

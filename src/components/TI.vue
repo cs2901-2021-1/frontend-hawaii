@@ -3,7 +3,7 @@
                 <v-flex xs12 sm8 md6 lg5 xl4>
                        
                         <v-card class="mb-10">
-                                <v-toolbar color="secondary" dark card>
+                                <v-toolbar color="tertiary" dark card>
                                         Proyecciones
                                 </v-toolbar>
                                 <v-card-text>
@@ -14,7 +14,7 @@
                         </v-card> 
                         
                         <v-card>
-                                <v-toolbar color="secondary" dark card>
+                                <v-toolbar color="tertiary" dark card>
                                         Autorización
                                 </v-toolbar>
                                 <v-card-text>
