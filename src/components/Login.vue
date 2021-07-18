@@ -29,8 +29,8 @@ export default {
         methods: {
                 ingresar(){
                         window.location.href = 'https://api.cs.mrg.com.pe/api-sec02-group02/viewers/auth';
-                        //this.cargando = true;
-                        //this.$emit("onIngresar", "token falso")
+                        this.cargando = true;
+                        this.$emit("onIngresar", "token falso")
                 }
         }
 }
