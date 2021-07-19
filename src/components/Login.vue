@@ -10,11 +10,8 @@
                                         </v-toolbar-title>
                                 </v-toolbar>
                                 <v-card-text>
-                                        <v-layout justify-center class="mb-5 mt-5">
+                                        <v-layout justify-center>
                                                 <v-btn @click="ingresar" :loading="cargando" :disabled="cargando" color="secondary">Ingresar con Google</v-btn>
-                                        </v-layout>
-                                        <v-layout justify-center class="mb-5">
-                                                <v-btn @click="tiIngresar" :loading="cargando" :disabled="cargando" color="secondary">TI Login</v-btn>
                                         </v-layout>
                                 </v-card-text>
                         </v-card>     
@@ -27,6 +24,11 @@
 
 <script>
 export default {
+        props: {
+                login: {type: String,
+                        required: true
+                }
+        },
         data(){
                 return {
                         cargando: false,
@@ -35,11 +37,8 @@ export default {
 
         methods: {
                 ingresar(){
-                        window.location.href = 'https://api.cs.mrg.com.pe/api-sec02-group02/viewers/auth';
+                        window.location.href = this.login;
                 },
-                tiIngresar(){
-                        window.location.href = 'https://api.cs.mrg.com.pe/api-sec02-group02/ti/auth';
-                }
         },
 }
 </script>
