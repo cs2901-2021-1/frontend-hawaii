@@ -65,7 +65,7 @@ export default {
 
             addViewer(){
                 this.agregando = true;
-                axios.post("https://api.cs.mrg.com.pe/api-sec02-group02/ti/add", {withCredentials: true})
+                axios.post("https://api.cs.mrg.com.pe/api-sec02-group02/ti/add", {email: correo + "@utec.edu.pe"}, {withCredentials: true})
                 .then(()=> alert("Registro exitoso"))
                 .catch(() => alert("Error agregando correo"))
                 .finally(() => this.agregando = false);
@@ -73,7 +73,7 @@ export default {
 
             deleteViewer(){
                 this.eliminando = true;
-                axios.post("https://api.cs.mrg.com.pe/api-sec02-group02/ti/del", {withCredentials: true})
+                axios.post("https://api.cs.mrg.com.pe/api-sec02-group02/ti/del", {email: correo + "@utec.edu.pe"}, {withCredentials: true})
                 .then(()=> alert("Eliminación exitosa"))
                 .catch(() => alert("Error eliminando correo"))
                 .finally(() => this.eliminando = false);
