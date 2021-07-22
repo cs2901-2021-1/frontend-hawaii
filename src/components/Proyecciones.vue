@@ -76,7 +76,7 @@ export default {
         created(){
                 axios.get("https://api.cs.mrg.com.pe/api-sec02-group02/viewers", {withCredentials: true})
                 .then(proyecciones => this.proyecciones = proyecciones.data)
-                .catch(() => window.location.href = "/#/noautorizado")
+                .catch(() => window.location.href = "/app-sec02-group02/#/noautorizado")
                 .finally(() => this.ingresando = false);
         }
 }

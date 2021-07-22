@@ -22,7 +22,7 @@ export default {
     },
     methods: {
         regresar(){
-            window.location.href = "/#/";
+            window.location.href = "/app-sec02-group02/#/";
         }
     }
 }
