@@ -30,8 +30,8 @@
   ]"
                                                                                         :csv-title="Archivo"
                                                                                 >
-                                                                                <v-btn color="success" class="mr-6">
-                                                                                Export <i class="mdi mdi-export-variant" aria-hidden="true"></i>
+                                                                                <v-btn color="success" class="ml-6">
+                                                                                Export
                                                                                 </v-btn>
                                                                                 </vue-json-to-csv>
                                                                         
@@ -67,7 +67,7 @@
 
 <script>
 import axios from 'axios';
-import VueJsonToCsv from 'vue-json-to-csv'
+
 export default {
         props: ["proyecciones"],
         data(){

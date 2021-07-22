@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import VueJsonToCsv from "vue-json-to-csv";
 
 Vue.use(VueRouter)
+Vue.use(VueJsonToCsv);
 
 const routes = [
   {
