@@ -47,7 +47,7 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC');
 .fondo{
-  background-color: #3a3b3f;
+  background-color: #313235;
 }
 .encode-font{
   font-family: 'Encode Sans SC', sans-serif !important;

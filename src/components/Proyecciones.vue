@@ -2,7 +2,7 @@
         <v-layout justify-center>
                 <v-flex xs12>
                          <v-card>
-                                <v-toolbar color="tertiary" dark card>
+                                <v-toolbar src="https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg" dark card >
                                         <v-toolbar-title>
                                              Última actualización:    
                                         </v-toolbar-title>
