@@ -76,10 +76,7 @@ export default {
 
         methods: {
                 administrar(){
-                        //window.location.href = "https://api.cs.mrg.com.pe/api-sec02-group02/ti/auth";
-                        axios.get("https://api.cs.mrg.com.pe/api-sec02-group02/ti/auth", {withCredentials: true})
-                        .then(()=> alert("SE PUDO"))
-                        .catch(() => alert("ERROR"))
+                        window.location.href = "https://api.cs.mrg.com.pe/api-sec02-group02/ti/auth";
                 }
         },
 
