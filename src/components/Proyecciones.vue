@@ -73,7 +73,6 @@ export default {
 
         methods: {
                 administrar(){
-                        this.
                         //window.location.href = "https://api.cs.mrg.com.pe/api-sec02-group02/ti/auth";
                         axios.get("https://api.cs.mrg.com.pe/api-sec02-group02/ti", {withCredentials: true})
                         .then(correos => this.correos = correos.data)
