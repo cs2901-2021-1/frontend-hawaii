@@ -23,7 +23,6 @@ export default {
     methods: {
         regresar(){
             this.$router.push('/');
-            //window.location.href = "/app-sec02-group02/#/";
         }
     }
 }

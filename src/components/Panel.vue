@@ -1,8 +1,22 @@
 <template>
+<v-layout justify-center>
+                <v-flex xs12>
+                                
+                                <v-toolbar color="tertiary" dark card>
+                                        <v-toolbar-title in-line>
+                                             <v-btn v-if="selector === 'generar'" @click="gestionar" :loading="irGestionar" :disabled="irGestionar" color="secondary" >Gestionar correos permitidos</v-btn> 
+                                             <v-btn v-else @click="generar" :loading="irGenerar" :disabled="irGenerar" color="secondary" >Generar nueva proyección</v-btn> 
+                                             <v-btn style="margin-left: 20px" @click="verProyecciones" :loading="irProyecciones" :disabled="irProyecciones" color="secondary" >Ver proyecciones</v-btn>  
+                                        </v-toolbar-title>
+                                </v-toolbar>
         <v-layout justify-center align-center>
                 <v-flex xs12 sm8 md6 lg5 xl4>
-                       
-                        <v-card class="mb-10">
+                       <v-flex xs6 mb-12>
+                        <v-layout justify-center>
+                                
+                        </v-layout>
+                       </v-flex>
+                        <v-card v-if="selector === 'generar'" class="mb-10">
                                 <v-toolbar color="tertiary" dark card>
                                         Proyecciones
                                 </v-toolbar>
@@ -13,7 +27,7 @@
                                 </v-card-text>
                         </v-card> 
                         
-                        <v-card>
+                        <v-card v-else>
                                 <v-toolbar color="tertiary" dark card>
                                         Autorizaciones
                                 </v-toolbar>
@@ -41,6 +55,8 @@
                            
                 </v-flex>  
         </v-layout>
+        </v-flex>  
+        </v-layout>
 </template>
 
 <script>
@@ -51,7 +67,8 @@ export default {
                     generando: false,
                     agregando: false,
                     eliminando: false,
-                    correo: ""
+                    correo: "",
+                    selector: "generar"
             }
     },
     methods: { 
@@ -77,6 +94,21 @@ export default {
                 .then(()=> alert("Eliminación exitosa"))
                 .catch(() => alert("Error eliminando correo"))
                 .finally(() => this.eliminando = false);
+            },
+            verProyecciones(){
+                    this.irProyecciones = true;
+                    this.$router.push('/proyecciones');
+                    this.irProyecciones = false;
+            },
+            gestionar(){
+                    this.irGestionar = true;
+                    this.selector = 'gestionar';
+                    this.irGestionar = false;
+            },
+            generar(){
+                    this.irGenerar = true;
+                    this.selector = 'generar';
+                    this.irGenerar = false;
             }
     }
 }

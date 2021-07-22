@@ -6,6 +6,7 @@
                                         <v-toolbar-title>
                                              Última actualización:    
                                         </v-toolbar-title>
+                                        <v-btn style="margin-left: 100px" @click="administrar" :loading="irAdministrar" :disabled="irAdministrar" color="secondary" >Panel de Administrador</v-btn>
                                 </v-toolbar>
 
                                 <v-toolbar color="secondary" dark card>
@@ -71,13 +72,15 @@ export default {
         },
 
         methods: {
+                administrar(){
+                        window.location.href = "https://api.cs.mrg.com.pe/api-sec02-group02/ti/auth";
+                }
         },
 
         created(){
                 axios.get("https://api.cs.mrg.com.pe/api-sec02-group02/viewers", {withCredentials: true})
                 .then(proyecciones => this.proyecciones = proyecciones.data)
                 .catch(() => this.$router.push('/noautorizado'))
-                //.catch(() => window.location.href = "/app-sec02-group02/#/noautorizado")
                 .finally(() => this.ingresando = false);
         }
 }
