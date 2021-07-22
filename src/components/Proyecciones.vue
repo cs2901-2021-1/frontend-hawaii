@@ -6,7 +6,7 @@
                                         <v-toolbar-title>
                                              Última actualización:    
                                         </v-toolbar-title>
-                                        <v-btn style="margin-left: 1100px" @click="administrar" :loading="irAdministrar" :disabled="irAdministrar" color="secondary" >Panel de Administrador</v-btn>
+                                        <v-btn style="margin-left: 1000px" @click="administrar" :loading="irAdministrar" :disabled="irAdministrar" color="secondary" >Panel de Administrador</v-btn>
                                 </v-toolbar>
 
                                 <v-toolbar color="secondary" dark card>
