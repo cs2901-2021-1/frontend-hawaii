@@ -22,7 +22,8 @@ export default {
     },
     methods: {
         regresar(){
-            window.location.href = "/app-sec02-group02/#/";
+            this.$router.push('/');
+            //window.location.href = "/app-sec02-group02/#/";
         }
     }
 }
