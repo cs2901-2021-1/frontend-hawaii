@@ -22,19 +22,6 @@
                                                                 <v-flex xs6>
                                                                         <v-layout justify-center>
                                                                                 <v-btn @click="exportar" :loading="exportando" :disabled="exportando" color="tertiary">Exportar CSV</v-btn>                                                
-                                                                                
-                                                                                <vue-json-to-csv
-                                                                                        :json-data="[
-    { name: 'Joe', surname: 'Roe' },
-    { name: 'John', surname: 'Doe' }
-  ]"
-                                                                                        :csv-title="Archivo"
-                                                                                >
-                                                                                <v-btn color="success" class="ml-6">
-                                                                                Export
-                                                                                </v-btn>
-                                                                                </vue-json-to-csv>
-                                                                        
                                                                         </v-layout>
                                                                 </v-flex>
                                                         </v-layout>
