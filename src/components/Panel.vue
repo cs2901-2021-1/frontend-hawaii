@@ -68,7 +68,7 @@ export default {
                     agregando: false,
                     eliminando: false,
                     correo: "",
-                    selector: "generar"
+                    selector: "gestionar"
             }
     },
     methods: { 
