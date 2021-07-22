@@ -22,19 +22,6 @@
                                                                 <v-flex xs6>
                                                                         <v-layout justify-center>
                                                                                 <v-btn @click="exportar" :loading="exportando" :disabled="exportando" color="tertiary">Exportar CSV</v-btn>                                                
-                                                                                
-                                                                                <vue-json-to-csv
-                                                                                        :json-data="[
-    { name: 'Joe', surname: 'Roe' },
-    { name: 'John', surname: 'Doe' }
-  ]"
-                                                                                        :csv-title="Archivo"
-                                                                                >
-                                                                                <v-btn color="success" class="ml-6">
-                                                                                Export
-                                                                                </v-btn>
-                                                                                </vue-json-to-csv>
-                                                                        
                                                                         </v-layout>
                                                                 </v-flex>
                                                         </v-layout>
@@ -69,7 +56,7 @@
 import axios from 'axios';
 
 export default {
-        props: ["proyecciones"],
+        props: ["proyecciones", "correos"],
         data(){
                 return {
                         variables: [
@@ -86,8 +73,12 @@ export default {
 
         methods: {
                 administrar(){
-                        window.location.href = "https://api.cs.mrg.com.pe/api-sec02-group02/ti/auth";
-                }
+                        //window.location.href = "https://api.cs.mrg.com.pe/api-sec02-group02/ti/auth";
+                        axios.get("https://api.cs.mrg.com.pe/api-sec02-group02/ti", {withCredentials: true})
+                        .then(correos => this.correos = correos.data)
+                        .catch(() => this.$router.push('/noautorizado'))
+                        .finally(() => this.ingresando = false);
+                        }
         },
 
         created(){
