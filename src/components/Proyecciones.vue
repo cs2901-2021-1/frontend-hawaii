@@ -56,7 +56,7 @@
 import axios from 'axios';
 
 export default {
-        props: ["proyecciones"],
+        props: ["proyecciones", "correos"],
         data(){
                 return {
                         variables: [
@@ -73,8 +73,13 @@ export default {
 
         methods: {
                 administrar(){
-                        window.location.href = "https://api.cs.mrg.com.pe/api-sec02-group02/ti/auth";
-                }
+                        this.
+                        //window.location.href = "https://api.cs.mrg.com.pe/api-sec02-group02/ti/auth";
+                        axios.get("https://api.cs.mrg.com.pe/api-sec02-group02/ti", {withCredentials: true})
+                        .then(correos => this.correos = correos.data)
+                        .catch(() => this.$router.push('/noautorizado'))
+                        .finally(() => this.ingresando = false);
+                        }
         },
 
         created(){
