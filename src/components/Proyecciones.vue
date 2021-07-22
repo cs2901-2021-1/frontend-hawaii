@@ -16,7 +16,7 @@
                                                 <v-container grid-list-md text-xs-center>
                                                         <v-layout row wrap>
                                                                 <v-flex xs4>
-                                                                        <v-text-field class="text-xs-center" v-model="filters" append-icon="search" label="Código" single-line hide-details></v-text-field>
+                                                                        <v-text-field class="text-xs-center" v-model="search" append-icon="search" label="Código" single-line hide-details></v-text-field>
                                                                 </v-flex>
                                                                 <v-flex xs4>
                                                                         <v-text-field class="text-xs-center" v-model="filters.nombre" append-icon="search" label="Nombre" single-line hide-details></v-text-field>
