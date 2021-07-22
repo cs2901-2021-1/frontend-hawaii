@@ -8,13 +8,15 @@ const routes = [
     path: "/",
     name: "Home",
     component: () => import("../components/Login.vue"),
-    props: {login: 'https://api.cs.mrg.com.pe/api-sec02-group02/viewers/auth'}
+    props: {
+      login: "https://api.cs.mrg.com.pe/api-sec02-group02/viewers/auth",
+    },
   },
   {
     path: "/ti",
     name: "TI",
     component: () => import("../components/Login.vue"),
-    props: {login: 'https://api.cs.mrg.com.pe/api-sec02-group02/ti/auth'},
+    props: { login: "https://api.cs.mrg.com.pe/api-sec02-group02/ti/auth" },
   },
   {
     path: "/panel",
@@ -25,6 +27,11 @@ const routes = [
     path: "/proyecciones",
     name: "Proyecciones",
     component: () => import("../components/Proyecciones.vue"),
+  },
+  {
+    path: "/noautorizado",
+    name: "NoAutorizado",
+    component: () => import("../components/NoAutorizado.vue"),
   },
 ];
 

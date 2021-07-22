@@ -10,9 +10,26 @@
 
                                 <v-toolbar color="secondary" dark card>
                                         <v-toolbar-title>
-                                                <v-text-field class="text-xs-center" v-model="search" append-icon="search" label="Búsqueda" single-line hide-details></v-text-field>
+                                                
+                                                
+                                                <v-container grid-list-md text-xs-center>
+                                                        <v-layout row wrap>
+                                                                <v-flex xs4>
+                                                                        <v-text-field class="text-xs-center" v-model="searchCodigo" append-icon="search" label="Código" single-line hide-details></v-text-field>
+                                                                </v-flex>
+                                                                <v-flex xs4>
+                                                                        <v-text-field class="text-xs-center" v-model="searchNombre" append-icon="search" label="Nombre" single-line hide-details></v-text-field>
+                                                                </v-flex>
+                                                                <v-flex xs4>
+                                                                        <v-layout justify-center>
+                                                                                <v-btn @click="exportar" :loading="exportando" :disabled="exportando" color="tertiary">Exportar CSV</v-btn>                                                
+                                                                        </v-layout>
+                                                                </v-flex>
+                                                        </v-layout>
+                                                </v-container>
 
                                         </v-toolbar-title>
+                                        
                                 </v-toolbar>
 
                                 <v-spacer></v-spacer>
@@ -49,6 +66,7 @@ export default {
                                 { text: 'Error (+/-)', value: 'error' },
                         ],
                         search:'',
+                        
                 }
         },
 
@@ -58,7 +76,7 @@ export default {
         created(){
                 axios.get("https://api.cs.mrg.com.pe/api-sec02-group02/viewers", {withCredentials: true})
                 .then(proyecciones => this.proyecciones = proyecciones.data)
-                .catch(() => alert("Error"))
+                .catch(() => window.location.href = "/#/noautorizado")
                 .finally(() => this.ingresando = false);
         }
 }
