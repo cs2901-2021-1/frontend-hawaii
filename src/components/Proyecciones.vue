@@ -22,6 +22,16 @@
                                                                 <v-flex xs6>
                                                                         <v-layout justify-center>
                                                                                 <v-btn @click="exportar" :loading="exportando" :disabled="exportando" color="tertiary">Exportar CSV</v-btn>                                                
+                                                                                
+                                                                                <vue-json-to-csv
+                                                                                        :json-data="variables"
+                                                                                        :csv-title="'fileName'"
+                                                                                >
+                                                                                <v-btn color="success" class="mr-6">
+                                                                                Export <i class="mdi mdi-export-variant" aria-hidden="true"></i>
+                                                                                </v-btn>
+                                                                                </vue-json-to-csv>
+                                                                        
                                                                         </v-layout>
                                                                 </v-flex>
                                                         </v-layout>
