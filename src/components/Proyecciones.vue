@@ -16,10 +16,10 @@
                                                 <v-container grid-list-md text-xs-center>
                                                         <v-layout row wrap>
                                                                 <v-flex xs4>
-                                                                        <v-text-field class="text-xs-center" v-model="searchCodigo" append-icon="search" label="Código" single-line hide-details></v-text-field>
+                                                                        <v-text-field class="text-xs-center" v-model="filters.codigo" append-icon="search" label="Código" single-line hide-details></v-text-field>
                                                                 </v-flex>
                                                                 <v-flex xs4>
-                                                                        <v-text-field class="text-xs-center" v-model="searchNombre" append-icon="search" label="Nombre" single-line hide-details></v-text-field>
+                                                                        <v-text-field class="text-xs-center" v-model="filters.nombre" append-icon="search" label="Nombre" single-line hide-details></v-text-field>
                                                                 </v-flex>
                                                                 <v-flex xs4>
                                                                         <v-layout justify-center>
@@ -40,7 +40,7 @@
                                                         <v-data-table 
                                                         :headers="variables"
                                                         :items="proyecciones"
-                                                        :search="search"
+                                                        :search="filters"
                                                         :items-per-page="10"
                                                         class="elevation-1"
                                                         ></v-data-table>
@@ -66,7 +66,10 @@ export default {
                                 { text: 'Proyección', value: 'nStudent' },
                                 { text: 'Error (+/-)', value: 'error' },
                         ],
-                        search:'',
+                        filters: {
+                                codigo: '',
+                                nombre: '',
+                        },
                         
                 }
         },
