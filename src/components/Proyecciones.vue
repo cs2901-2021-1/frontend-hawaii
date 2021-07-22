@@ -24,8 +24,11 @@
                                                                                 <v-btn @click="exportar" :loading="exportando" :disabled="exportando" color="tertiary">Exportar CSV</v-btn>                                                
                                                                                 
                                                                                 <vue-json-to-csv
-                                                                                        :json-data="variables"
-                                                                                        :csv-title="'fileName'"
+                                                                                        :json-data="[
+    { name: 'Joe', surname: 'Roe' },
+    { name: 'John', surname: 'Doe' }
+  ]"
+                                                                                        :csv-title="Archivo"
                                                                                 >
                                                                                 <v-btn color="success" class="mr-6">
                                                                                 Export <i class="mdi mdi-export-variant" aria-hidden="true"></i>
@@ -64,6 +67,7 @@
 
 <script>
 import axios from 'axios';
+import VueJsonToCsv from 'vue-json-to-csv'
 export default {
         props: ["proyecciones"],
         data(){
