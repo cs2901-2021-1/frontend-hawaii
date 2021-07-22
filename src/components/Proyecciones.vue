@@ -15,13 +15,11 @@
                                                 
                                                 <v-container grid-list-md text-xs-center>
                                                         <v-layout row wrap>
-                                                                <v-flex xs4>
+                                                                <v-flex xs6>
                                                                         <v-text-field class="text-xs-center" v-model="search" append-icon="search" label="Código" single-line hide-details></v-text-field>
                                                                 </v-flex>
-                                                                <v-flex xs4>
-                                                                        <v-text-field class="text-xs-center" v-model="filters.nombre" append-icon="search" label="Nombre" single-line hide-details></v-text-field>
-                                                                </v-flex>
-                                                                <v-flex xs4>
+                                                        
+                                                                <v-flex xs6>
                                                                         <v-layout justify-center>
                                                                                 <v-btn @click="exportar" :loading="exportando" :disabled="exportando" color="tertiary">Exportar CSV</v-btn>                                                
                                                                         </v-layout>
@@ -40,7 +38,7 @@
                                                         <v-data-table 
                                                         :headers="variables"
                                                         :items="proyecciones"
-                                                        :search="filters"
+                                                        :search="search"
                                                         :items-per-page="10"
                                                         class="elevation-1"
                                                         ></v-data-table>
@@ -66,7 +64,7 @@ export default {
                                 { text: 'Proyección', value: 'nStudent' },
                                 { text: 'Error (+/-)', value: 'error' },
                         ],
-                        filters: '',
+                        search: '',
                         
                         
                 }
