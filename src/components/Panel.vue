@@ -34,7 +34,7 @@
                                 <v-card-text>
                                         <v-container fluid>
                                         <v-layout justify-center>
-                                                <v-text-field label="Correo UTEC" v-model="correo" ></v-text-field>
+                                                <v-text-field label="Correo UTEC" v-model="correo_field" ></v-text-field>
                                         </v-layout>
                                         <v-layout>
                                                 <v-flex xs6>
@@ -80,14 +80,7 @@
 import axios from 'axios';
 export default {
     data: () => ({
-                correos: [
-                        'correos1.test@utec.edu.pe',
-                        'correos2.test@utec.edu.pe',
-                        'correos3.test@utec.edu.pe',
-                        'correos4.test@utec.edu.pe',
-                        'correos5.test@utec.edu.pe',
-                        'massimo.imparato@utec.edu.pe',
-                ],
+                correos: [],
                 generando: false,
                 agregando: false,
                 eliminando: false,
@@ -105,7 +98,7 @@ export default {
 
             addViewer(){
                 this.agregando = true;
-                axios.post("https://api.cs.mrg.com.pe/api-sec02-group02/ti/add", {email: this.correo}, {withCredentials: true})
+                axios.post("https://api.cs.mrg.com.pe/api-sec02-group02/ti/add", {email: this.correo_field}, {withCredentials: true})
                 .then(()=> alert("Registro exitoso"))
                 .catch(() => alert("Error agregando correo"))
                 .finally(() => this.agregando = false);
@@ -113,7 +106,7 @@ export default {
 
             deleteViewer(){
                 this.eliminando = true;
-                axios.post("https://api.cs.mrg.com.pe/api-sec02-group02/ti/del", {email: this.correo + "@utec.edu.pe"}, {withCredentials: true})
+                axios.post("https://api.cs.mrg.com.pe/api-sec02-group02/ti/del", {email: this.correo_field}, {withCredentials: true})
                 .then(()=> alert("Eliminación exitosa"))
                 .catch(() => alert("Error eliminando correo"))
                 .finally(() => this.eliminando = false);
@@ -133,6 +126,11 @@ export default {
                     this.selector = 'generar';
                     this.irGenerar = false;
             }
+    },
+    created(){
+            axios.get("https://api.cs.mrg.com.pe/api-sec02-group02/ti", {withCredentials: true})
+                .then(correos => this.correos = correos.data)
+                .catch(() => this.$router.push('/noautorizado'));
     }
 }
 </script>

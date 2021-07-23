@@ -13,12 +13,6 @@ const routes = [
     },
   },
   {
-    path: "/ti",
-    name: "TI",
-    component: () => import("../components/Login.vue"),
-    props: { login: "https://api.cs.mrg.com.pe/api-sec02-group02/ti/auth" },
-  },
-  {
     path: "/panel",
     name: "TIDashboard",
     component: () => import("../components/Panel.vue"),
