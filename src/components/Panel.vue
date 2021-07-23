@@ -63,7 +63,7 @@
                                                                 </v-list-item-content>
                                                         </template>
                                                                 <v-list-item v-for="(correo,i) in correos" :key="i" link>
-                                                                        <v-list-item-title v-text="correo" class="tile"></v-list-item-title>     
+                                                                        <v-list-item-title v-text="correo.email" class="tile"></v-list-item-title>     
                                                                 </v-list-item>                                      
                                                 </v-list-group>
                                         </v-list>
