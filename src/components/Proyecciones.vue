@@ -90,7 +90,7 @@ export default {
                                 fname: 'First Name',
                                 lname: 'Last Name'
                         },*/
-                        fields: ['id', 'fname', 'lname', 'date'],
+                        fields: ['code', 'name', 'nStudent', 'error'],
                         isExported: false
 
                         
@@ -114,6 +114,7 @@ export default {
         created(){
                 axios.get("https://api.cs.mrg.com.pe/api-sec02-group02/viewers", {withCredentials: true})
                 .then(proyecciones => this.proyecciones = proyecciones.data)
+                //.catch(() => alert("No se pudo"))
                 .catch(() => this.$router.push('/noautorizado'))
                 .finally(() => this.ingresando = false);
         }
