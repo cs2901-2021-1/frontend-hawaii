@@ -20,9 +20,18 @@
                                                                 </v-flex>
                                                         
                                                                 <v-flex xs6>
-                                                                        <v-layout justify-center>
-                                                                                <v-btn @click="exportar" :loading="exportando" :disabled="exportando" color="tertiary">Exportar CSV</v-btn>                                                
-                                                                        </v-layout>
+                                                                        
+                                                                        <div>
+                                                                        <download-csv
+                                                                        :data="proyecciones"
+                                                                        :name="dataFile"
+                                                                        :fields="fields"
+                                                                        v-on:export-finished="exported"
+                                                                        >
+                                                                        <button class="button">Exportar CSV</button>
+                                                                        </download-csv>
+                                                                        </div>
+
                                                                 </v-flex>
                                                         </v-layout>
                                                 </v-container>
@@ -54,8 +63,13 @@
 
 <script>
 import axios from 'axios';
+import JsonCSV from '../plugins/JsonCSV.vue'
 
 export default {
+        components: {'download-csv': JsonCSV},
+        computed: {
+                readableJson: function() { return JSON.stringify(this.jsonData, null, 2)}
+        },
         
         data(){
                 return {
@@ -68,6 +82,17 @@ export default {
                         search: '',
                         irAdministrar: false,
                         proyecciones: [],
+
+                        
+                        dataFile: 'proyecciones.csv',
+                        /*
+                        labels: {
+                                fname: 'First Name',
+                                lname: 'Last Name'
+                        },*/
+                        fields: ['id', 'fname', 'lname', 'date'],
+                        isExported: false
+
                         
                 }
         },
@@ -75,7 +100,15 @@ export default {
         methods: {
                 administrar(){
                         this.$router.push('/panel')
-                        }
+                },
+
+                exported(event) {
+                        console.log(event)
+                        this.isExported = true
+                        setTimeout(() => {
+                                this.isExported = false
+                        }, 3 * 1000)
+                }
         },
 
         created(){
