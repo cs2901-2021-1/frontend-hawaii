@@ -39,12 +39,12 @@
                                         <v-layout>
                                                 <v-flex xs6>
                                                         <v-layout justify-center>
-                                                        <v-btn @click="addViewer" :loading="agregando" :disabled="agregando" color="secondary" >Añadir</v-btn>
+                                                        <v-btn @click="addViewer" :loading="modificando" :disabled="modificando" color="secondary" >Añadir</v-btn>
                                                         </v-layout>
                                                 </v-flex>
                                                 <v-flex xs6>
                                                         <v-layout justify-center>
-                                                        <v-btn @click="deleteViewer" :loading="eliminando" :disabled="eliminando" color="secondary">Eliminar</v-btn>                                                
+                                                        <v-btn @click="deleteViewer" :loading="modificando" :disabled="modificando" color="secondary">Eliminar</v-btn>                                                
                                                         </v-layout>
                                                 </v-flex>
                                         
@@ -82,8 +82,7 @@ export default {
     data: () => ({
                 correos: [],
                 generando: false,
-                agregando: false,
-                eliminando: false,
+                modificando: false,
                 correo_field: "",
                 selector: "gestionar"
         }),
@@ -97,19 +96,19 @@ export default {
             },
 
             addViewer(){
-                this.agregando = true;
-                axios.post("https://api.cs.mrg.com.pe/api-sec02-group02/ti/add", {email: this.correo_field}, {withCredentials: true})
-                .then(()=> alert("Registro exitoso"))
+                this.modificando = true;
+                axios.get("https://api.cs.mrg.com.pe/api-sec02-group02/ti/add?email=" + this.correo_field, {withCredentials: true})
+                .then(()=> {alert("Registro exitoso");this.correo_field = "";})
                 .catch(() => alert("Error agregando correo"))
-                .finally(() => this.agregando = false);
+                .finally(() => this.modificando = false);
             },
 
             deleteViewer(){
-                this.eliminando = true;
-                axios.post("https://api.cs.mrg.com.pe/api-sec02-group02/ti/del", {email: this.correo_field}, {withCredentials: true})
-                .then(()=> alert("Eliminación exitosa"))
+                this.modificando = true;
+                axios.get("https://api.cs.mrg.com.pe/api-sec02-group02/ti/del?email=" + this.correo_field, {withCredentials: true})
+                .then(()=> {alert("Eliminación exitosa");this.correo_field = "";})
                 .catch(() => alert("Error eliminando correo"))
-                .finally(() => this.eliminando = false);
+                .finally(() => this.modificando = false);
             },
             verProyecciones(){
                     this.irProyecciones = true;
