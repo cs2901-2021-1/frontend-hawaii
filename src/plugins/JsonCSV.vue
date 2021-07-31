@@ -64,8 +64,7 @@ export default {
      * Advanced options for Papaparse that is used to export to CSV
      */
     advancedOptions: {
-      type: Object,
-      default: () => {}
+      type: Object
     },
     /**
      * Labels for columns
@@ -108,8 +107,7 @@ export default {
       }
       if (isType(this.labels, "function")) {
         return item => {
-          let _mapKeys = mapKeys(item, this.labels);
-          return _mapKeys;
+          return mapKeys(item, this.labels);
         };
       }
       if (isType(this.labels, "object")) {
